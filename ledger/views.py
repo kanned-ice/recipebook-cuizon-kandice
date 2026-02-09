@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.views.generic.base import TemplateView
 
 recipe = [
             {
@@ -66,5 +67,12 @@ recipe = [
 
 def recipes(request):
     ctx = {"recipes": recipe}
-
     return render(request, "ledger/recipes.html", ctx)
+
+class RecipeView(TemplateView):
+    template_name = 'recipes.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['recipes'] = recipe.objects.filter(name="Recipe 1")
+        return context

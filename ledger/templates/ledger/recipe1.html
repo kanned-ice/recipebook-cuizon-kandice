@@ -5,9 +5,9 @@
 {% block content %}
 
 <ul>
-    {% for recipe in recipes %}
+    {% for name in recipes %}
         <li>
-            {{recipe.name}}, localhost:8000/ledger{{recipe.link}}
+            {{recipe.name}}
         </li>
     {% endfor %}
 </ul>
