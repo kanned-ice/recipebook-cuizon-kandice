@@ -7,7 +7,7 @@
 <ul>
     {% for recipe in recipes %}
         <li>
-            {{recipe.name}}, localhost:8000/ledger{{recipe.link}}
+            <a href="{{recipe.link}}">{{recipe.name}}</a>
         </li>
     {% endfor %}
 </ul>
