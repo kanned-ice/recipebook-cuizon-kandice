@@ -5,9 +5,9 @@ from .models import Recipe
 
 class RecipeListView(ListView):
     model = Recipe
-    template_name = "ledger/recipes.html"
+    template_name = "ledger/recipe_list.html"
 
 
 class RecipeDetailView(DetailView):
     model = Recipe
-    template_name = "ledger/recipe_list.html"
+    template_name = "ledger/detail.html"

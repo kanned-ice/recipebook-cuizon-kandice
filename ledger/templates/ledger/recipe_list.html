@@ -1,18 +1,21 @@
 {% extends 'base.html' %}
 {% load static %}
 
+
 {% block title %}Recipe Book{% endblock %}
 {% block content %}
 
+
 <ul>
-   {{recipe}}
-   <br><br>
-  
-   {% for ingredient in recipe.ingredients.all %}
+   {% for recipe in recipe_list %}
        <li>
-           {{ingredient}}
+           <a href="{{recipe.get_absolute_url}}">
+               {{recipe}}
+           </a>
        </li>
    {% endfor %}
 </ul>
 
+
 {% endblock %}
+
