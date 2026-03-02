@@ -12,3 +12,4 @@ class RecipeListView(ListView):
 class RecipeDetailView(LoginRequiredMixin, DetailView):
     model = Recipe
     template_name = "ledger/recipe_detail.html"
+    redirect_field_name = None
