@@ -18,7 +18,8 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='recipe',
             name='created_on',
-            field=models.DateTimeField(auto_now_add=True, default=django.utils.timezone.now),
+            field=models.DateTimeField(auto_now_add=True,
+                                       default=django.utils.timezone.now),
             preserve_default=False,
         ),
         migrations.AddField(
@@ -29,16 +30,33 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Profile',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(
+                    auto_created=True,
+                    primary_key=True,
+                    serialize=False,
+                    verbose_name='ID'
+                    )),
                 ('name', models.CharField(max_length=50)),
-                ('short_bio', models.TextField(validators=[django.core.validators.MinLengthValidator(255, 'the field must contain at least 255 characters')])),
-                ('user', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
+                ('short_bio', models.TextField(
+                    validators=[django.core.validators.MinLengthValidator(
+                        255,
+                        'the field must contain at least 255 characters'
+                        )])),
+                ('user', models.OneToOneField(
+                    on_delete=django.db.models.deletion.CASCADE,
+                    to=settings.AUTH_USER_MODEL
+                    )),
             ],
         ),
         migrations.AddField(
             model_name='recipe',
             name='author',
-            field=models.ForeignKey(default=1, on_delete=django.db.models.deletion.CASCADE, related_name='recipe_author', to='ledger.profile'),
+            field=models.ForeignKey(
+                default=1,
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name='recipe_author',
+                to='ledger.profile'
+                ),
             preserve_default=False,
         ),
     ]
