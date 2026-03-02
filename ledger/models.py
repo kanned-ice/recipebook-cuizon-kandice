@@ -14,6 +14,9 @@ class Profile(models.Model):
    short_bio = models.TextField(validators=[MinLengthValidator(255,
    'the field must contain at least 255 characters')])
 
+   def __str__(self):
+       return self.name
+
 
 class Ingredient(models.Model):
     name = models.CharField(max_length=200)
