@@ -5,7 +5,7 @@
 {% block content %}
 
 <ul>
-   {{recipe}}
+   {{recipe.author.name}}: {{recipe}}
    <br><br>
   
    {% for ingredient in recipe.ingredients.all %}
