@@ -79,3 +79,6 @@ class RecipeImage(models.Model):
         on_delete=models.CASCADE,
         related_name='image'
     )
+
+    def __str__(self):
+        return self.image
