@@ -5,10 +5,12 @@
 {% block title %}Recipe Book{% endblock %}
 {% block content %}
 <br><br>
-<h3>Recipe Form</h3>
-<form method="POST">
+<h3>Upload Image</h3>
+<form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form }}
     <input type="submit" name="submit" value="Save Form">
 </form>
+<br>
+
 {% endblock %}
